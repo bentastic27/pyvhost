@@ -13,5 +13,5 @@ urlpatterns = [
     path('list/', list, name='list'),
     path('create/', create, name='create'),
     path('show/<int:vhost_id>/', show, name='show'),
-    path('delete/', delete, name='delete')
+    path('delete/<int:vhost_id>/', delete, name='delete')
 ]

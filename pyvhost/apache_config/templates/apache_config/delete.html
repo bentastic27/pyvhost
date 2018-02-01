@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<h1>Delete {{ vhost.domain_name }}</h1>
+<form action="{% url 'apache_config:delete' vhost_id=vhost.id %}" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form confirm_delete %}
+  {% buttons %}
+    <button type="submit" class="btn btn-danger">
+      Delete
+    </button>
+  {% endbuttons %}
+</form>
+{% endblock %}
