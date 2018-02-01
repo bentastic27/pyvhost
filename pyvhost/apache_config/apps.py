@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ApacheConfigConfig(AppConfig):
+class ApacheConfig(AppConfig):
     name = 'apache_config'
