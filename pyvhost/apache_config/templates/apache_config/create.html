@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<h1>Create Virtual Host</h1>
+<form action="/create" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form create_form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      {% bootstrap_icon "star" %} Submit
+    </button>
+  {% endbuttons %}
+</form>
+{% endblock %}

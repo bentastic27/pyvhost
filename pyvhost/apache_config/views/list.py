@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 
-def index(request):
+def list(request):
     return render(request, 'apache_config/index.html')
