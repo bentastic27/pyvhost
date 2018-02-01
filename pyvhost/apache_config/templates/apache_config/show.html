@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ vhost.domain_name }}</h1>
+<p><b>Active: {{ vhost.active }}</b></p>
+<p>Include WWW: {{ vhost.include_www }}</p>
+<p>Redirect to HTTPs: {{ vhost.redirect_https }}</p>
+<p>PHP Enabled: {{ vhost.php_enabled }}</p>
+<p>Let's Encrypt Enabled: {{ vhost.lets_encrypt }}</p>
+{% endblock %}

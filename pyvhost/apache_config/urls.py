@@ -6,10 +6,12 @@ from .views.list import list
 from .views.delete import delete
 from .views.show import show
 
+app_name = 'apache_config'
+
 urlpatterns = [
     path('', index, name='index'),
-    path('list', list, name='list'),
-    path('create', create, name='create'),
-    path('show', show, name='show'),
-    path('delete', delete, name='delete')
+    path('list/', list, name='list'),
+    path('create/', create, name='create'),
+    path('show/<int:vhost_id>/', show, name='show'),
+    path('delete/', delete, name='delete')
 ]
