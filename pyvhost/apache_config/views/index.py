@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import reverse
+from django.http import HttpResponseRedirect
 
 
 def index(request):
-    return render(request, 'apache_config/index.html')
+    return HttpResponseRedirect(
+        reverse('apache_config:listing')
+    )

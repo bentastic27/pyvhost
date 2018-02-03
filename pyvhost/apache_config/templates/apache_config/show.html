@@ -7,5 +7,6 @@
 <p>Redirect to HTTPs: {{ vhost.redirect_https }}</p>
 <p>PHP Enabled: {{ vhost.php_enabled }}</p>
 <p>Let's Encrypt Enabled: {{ vhost.lets_encrypt }}</p>
-{% bootstrap_button button_type='link' content='delete' href=delete_url button_class='btn-danger' %}
+{% bootstrap_button button_type='link' content='VHOST List' href=listing_url button_class='btn-primary' %}
+{% bootstrap_button button_type='link' content='Delete' href=delete_url button_class='btn-danger' %}
 {% endblock %}

@@ -13,7 +13,8 @@ def create(request):
             include_www=create_form.cleaned_data['include_www'],
             redirect_https=create_form.cleaned_data['redirect_https'],
             php_enabled=create_form.cleaned_data['php_enabled'],
-            lets_encrypt=create_form.cleaned_data['lets_encrypt']
+            lets_encrypt=create_form.cleaned_data['lets_encrypt'],
+            active=create_form.cleaned_data['active']
         )
         new_vhost.save()
         return HttpResponseRedirect(

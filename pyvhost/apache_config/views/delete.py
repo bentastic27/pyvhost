@@ -12,7 +12,7 @@ def delete(request, vhost_id):
         if confirm_delete.cleaned_data['confirm']:
             vhost.delete()
             return HttpResponseRedirect(
-                reverse('apache_config:list')
+                reverse('apache_config:listing')
             )
 
     return render(

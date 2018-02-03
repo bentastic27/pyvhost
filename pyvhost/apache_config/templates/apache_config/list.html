@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<h1>Virtual Host List</h1>
+{% bootstrap_button button_type='link' content='Create' href=create_url button_class='btn-primary' %}
+<br /><br />
+<div class="panel panel-default">
+    <div class="panel-heading">Virtual Hosts</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Domain Name</th>
+                <th>Include WWW</th>
+                <th>Redirect to HTTPS</th>
+                <th>PHP Enabled</th>
+                <th>Use Let's Encrypt</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vhost in vhost_list %}
+            <tr class='clickable-row' data-href="{% url 'apache_config:show' vhost.id %}">
+                <td>{{ vhost.domain_name }}</td>
+                <td>{{ vhost.include_www }}</td>
+                <td>{{ vhost.redirect_https }}</td>
+                <td>{{ vhost.php_enabled }}</td>
+                <td>{{ vhost.lets_encrypt }}</td>
+                <td>{{ vhost.active }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
