@@ -11,6 +11,26 @@
     </script>
 </head>
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'apache_config:index' %}">PyVhost</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'apache_config:create' %}">Create</a></li>
+                <li><a href="{% url 'apache_config:listing' %}">List</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
     {% bootstrap_messages %}
-    {% block content %}{% endblock %}
+    <div class="container">
+        <div class="col"></div>
+        <div class="col-6">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="col"></div>
+    </div>
 </body>
