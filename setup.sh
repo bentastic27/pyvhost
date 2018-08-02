@@ -15,7 +15,7 @@ if [ $DISTRIB_RELEASE != '18.04']; then
 fi
 
 # installing and setting up apache
-apt install apache2 python3-pip php7.2 libapache2-mod libapache2-mod-php7.2 certbot python-virtualenv python3-virtualenv
+apt install apache2 python3-pip php7.2 libapache2-mod libapache2-mod-php7.2 certbot python-virtualenv python3-virtualenv certbot
 a2enmod rewrite
 a2enmod ssl
 a2enmod php7.2
