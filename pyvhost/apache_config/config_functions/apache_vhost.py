@@ -1,6 +1,4 @@
-from django.template import Context
-from .misc import get_template
-
+from django.template.loader import render_to_string
 
 def gen_vhost(vhost):
-    return get_template("vhost.txt").render(Context({"vhost": vhost}))
+    return render_to_string("vhost.txt", {"vhost": vhost})
