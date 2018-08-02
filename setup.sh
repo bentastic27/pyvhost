@@ -9,7 +9,7 @@ fi
 
 # must be ubuntu 18.04
 . /etc/lsb-release
-if [[ $DISTRIB_RELEASE -ne '18.04']]; then
+if [ $DISTRIB_RELEASE != '18.04']; then
     echo "Ubuntu 18.04 required"
     exit 1
 fi
