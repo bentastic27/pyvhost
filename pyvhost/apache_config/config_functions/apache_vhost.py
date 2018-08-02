@@ -12,7 +12,7 @@ def write_vhost(vhost):
     vhost_file_path = settings.APACHE_VHOST_DIR + "/"
     vhost_file_path += vhost.domain_name + ".conf"
 
-    if os.path.isdir(vhost_file_path):
+    if os.path.isdir(settings.APACHE_VHOST_DIR):
         vhost_file = open(vhost_file_path, 'w')
         vhost_file.write(gen_vhost(vhost))
         vhost_file.close()
