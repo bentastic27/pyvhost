@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+    ServerName {{ vhost.domain_name }}
+    {% if vhost.include_www %}ServerAlias www.{{ vhost.domain_name }}{% endif %}
+    DocumentRoot "/var/www/{{ vhost.domain_name }}"
+    
+    {% if vhost.redirect_https %}RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]{% endif %}
+</VirtualHost>
