@@ -31,7 +31,7 @@ SECRET_KEY = '9x)*=$%00u%(s9e(mh2!gwxi(5g8nil6(qlh-w+g-a1^*ublf1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
