@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+# Apache configurations (defaults as shipped from Ubuntu repos)
+APACHE_ROOT = '/etc/apache2'
+APACHE_VHOST_DIR = '/etc/apache2/sites-enabled'
+APACHE_CONF_DIR = '/etc/apache2/conf-enabled'
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
