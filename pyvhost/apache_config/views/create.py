@@ -13,9 +13,11 @@ def create(request):
             domain_name=create_form.cleaned_data['domain_name'],
             include_www=create_form.cleaned_data['include_www'],
             redirect_https=create_form.cleaned_data['redirect_https'],
-            php_enabled=create_form.cleaned_data['php_enabled'],
             lets_encrypt=create_form.cleaned_data['lets_encrypt'],
-            active=create_form.cleaned_data['active']
+            active=create_form.cleaned_data['active'],
+            ssl_cert=create_form.cleaned_data['ssl_cert'],
+            ssl_key=create_form.cleaned_data['ssl_key'],
+            ssl_bundle=create_form.cleaned_data['ssl_bundle']
         )
         new_vhost.save()
         
