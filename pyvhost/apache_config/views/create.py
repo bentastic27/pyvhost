@@ -2,6 +2,7 @@ from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
 from ..models import VirtualHost
 from ..forms import VirtualHostForm
+from ..config_functions.apache_vhost import write_vhost
 
 
 def create(request):
@@ -17,6 +18,10 @@ def create(request):
             active=create_form.cleaned_data['active']
         )
         new_vhost.save()
+        
+        if new_vhost.active:
+            write_vhost(new_vhost)
+
         return HttpResponseRedirect(
             reverse('apache_config:show', kwargs={
                 'vhost_id': new_vhost.id
