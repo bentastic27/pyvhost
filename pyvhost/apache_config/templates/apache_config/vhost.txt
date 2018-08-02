@@ -2,6 +2,9 @@
     ServerName {{ vhost.domain_name }}
     {% if vhost.include_www %}ServerAlias www.{{ vhost.domain_name }}{% endif %}
     DocumentRoot "/var/www/{{ vhost.domain_name }}"
+
+    ErrorLog ${APACHE_LOG_DIR}/{{ vhost.domain_name }}.error.log
+    CustomLog ${APACHE_LOG_DIR}/{{ vhost.domain_name }}.access.log combined
     
     {% if vhost.redirect_https %}RewriteEngine On
     RewriteCond %{HTTPS} !=on

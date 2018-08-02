@@ -8,7 +8,7 @@
 <p>PHP Enabled: {{ vhost.php_enabled }}</p>
 <p>Let's Encrypt Enabled: {{ vhost.lets_encrypt }}</p>
 <br />
-<textarea rows="10" cols="40">{{ rendered_vhost }}</textarea>
+<textarea rows="10" cols="80">{{ rendered_vhost }}</textarea>
 <br /><br />
 {% bootstrap_button button_type='link' content='VHOST List' href=listing_url button_class='btn-primary' %}
 {% bootstrap_button button_type='link' content='Delete' href=delete_url button_class='btn-danger' %}
